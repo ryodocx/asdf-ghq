@@ -14,18 +14,20 @@ cd "${downloadPath}"
 
 case "$(uname -s)" in
 "Darwin")
-    DOWNLOADURL="https://github.com/${github_user}/${github_repo}/releases/download/v${ASDF_INSTALL_VERSION}/ghq_darwin_amd64.zip"
+    DOWNLOADFILE="ghq_darwin_amd64"
+    DOWNLOADURL="https://github.com/${github_user}/${github_repo}/releases/download/v${ASDF_INSTALL_VERSION}/${DOWNLOADFILE}.zip"
     ;;
 "Linux")
-    DOWNLOADURL="https://github.com/${github_user}/${github_repo}/releases/download/v${ASDF_INSTALL_VERSION}/ghq_linux_amd64.zip"
+    DOWNLOADFILE="ghq_linux_amd64"
+    DOWNLOADURL="https://github.com/${github_user}/${github_repo}/releases/download/v${ASDF_INSTALL_VERSION}/${DOWNLOAD_FILE}.zip"
     ;;
 esac
 
 curl -fL -o "${downloadPath}/ghq.zip" "${DOWNLOADURL}"
 unzip -q ghq.zip
-chmod +x ghq
+chmod +x ${DOWNLOADFILE}/ghq
 mkdir -p "${ASDF_INSTALL_PATH}/bin"
 toolPath="${ASDF_INSTALL_PATH}/bin/${toolname}"
-mv ./ghq "${toolPath}"
+mv ./${DOWNLOADFILE}/ghq "${toolPath}"
 
 rm -rf "${downloadPath}"
