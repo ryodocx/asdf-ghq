@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 toolname=ghq
-github_user=motemen
+github_user=x-motemen
 github_repo=ghq
 required_commands="curl sed unzip mktemp"
 
