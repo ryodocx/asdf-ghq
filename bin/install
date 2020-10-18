@@ -19,7 +19,7 @@ case "$(uname -s)" in
     ;;
 "Linux")
     DOWNLOADFILE="ghq_linux_amd64"
-    DOWNLOADURL="https://github.com/${github_user}/${github_repo}/releases/download/v${ASDF_INSTALL_VERSION}/${DOWNLOAD_FILE}.zip"
+    DOWNLOADURL="https://github.com/${github_user}/${github_repo}/releases/download/v${ASDF_INSTALL_VERSION}/${DOWNLOADFILE}.zip"
     ;;
 esac
 
